@@ -9,7 +9,7 @@ import java.net.http.HttpResponse;
 
 public class ConvertCurrencies {
 
-    private String apiUrl = "https://v6.exchangerate-api.com/v6/";
+    private String apiUrl = "https://v6.exchangerate-api.com/v6";
     private String apiKey;
     private HttpClient client;
     private ConfigureEnvironment configEnv;

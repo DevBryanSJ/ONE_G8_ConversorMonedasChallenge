@@ -26,8 +26,8 @@ public class Main {
             do {
                 System.out.print("Ingresa la opción y ENTER para continuar: ");
                 option1 = scanner.nextInt();
-                if (option1 < 1 || option1 > 7) System.out.println("¡Opción no válida! Intente de nuevo\n");
-            } while(option1 < 1 || option1 > 7);
+                if (option1 < 1 || option1 > seed.getCurrencies().size()) System.out.println("¡Opción no válida! Intente de nuevo\n");
+            } while(option1 < 1 || option1 > seed.getCurrencies().size());
 
             System.out.println("\n¿A que tipo de moneda quiere la conversion?");
 
@@ -40,8 +40,8 @@ public class Main {
             do {
                 System.out.print("Ingresa la opción y ENTER para continuar: ");
                 option2 = scanner.nextInt();
-                if (option2 < 1 || option2 > 7 || option2 == option1) System.out.println("¡Opción no válida! Intente de nuevo\n");
-            } while(option2 < 1 || option2 > 7 || option2 == option1);
+                if (option2 < 1 || option2 > seed.getCurrencies().size() || option2 == option1) System.out.println("¡Opción no válida! Intente de nuevo\n");
+            } while(option2 < 1 || option2 > seed.getCurrencies().size() || option2 == option1);
 
             System.out.print("\nIngrese el monto (en " + seed.getCurrencies().get(option1 - 1).code() + ") a convertir: $");
             double amount = scanner.nextDouble();
