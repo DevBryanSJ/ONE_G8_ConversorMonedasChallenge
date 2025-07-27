@@ -10,18 +10,21 @@ import java.net.http.HttpResponse;
 public class ConvertCurrencies {
 
     private String apiUrl = "https://v6.exchangerate-api.com/v6/";
-    private String apiKey = "315ab42600ce1ceb67588b59";
+    private String apiKey;
     private HttpClient client;
+    private ConfigureEnvironment configEnv;
 
     public ConvertCurrencies() {
         client = HttpClient.newHttpClient();
+        configEnv = new ConfigureEnvironment();
+        apiKey = configEnv.loadExchangeRateApiKey();
     }
 
     // ------------------------------------------------
     // Method to convert specific amount from 'X' to 'Y' currency
     // ------------------------------------------------
-    public Conversion convertAmountFromTo (double amount, String currencyCode1, String currecyCode2) {
-        URI url = URI.create(apiUrl + "/" + apiKey + "/pair/" + currencyCode1 + "/" + currecyCode2 + "/" + amount);
+    public Conversion convertAmountFromTo (double amount, String currencyCode1, String currencyCode2) {
+        URI url = URI.create(apiUrl + "/" + apiKey + "/pair/" + currencyCode1 + "/" + currencyCode2 + "/" + amount);
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(url)

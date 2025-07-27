@@ -5,7 +5,11 @@ import java.util.List;
 
 public class SeedCurrencies {
 
-    public List<Currency> currencies = new ArrayList<>();
+    public List<Currency> getCurrencies() {
+        return currencies;
+    }
+
+    private List<Currency> currencies = new ArrayList<>();
 
     public SeedCurrencies() {
         currencies.add(new Currency("MXN", null));
