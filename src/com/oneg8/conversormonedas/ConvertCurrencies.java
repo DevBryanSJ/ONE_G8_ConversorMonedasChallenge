@@ -20,8 +20,8 @@ public class ConvertCurrencies {
     // ------------------------------------------------
     // Method to convert specific amount from 'X' to 'Y' currency
     // ------------------------------------------------
-    public Conversion convertAmountFromTo (String amount, String currencyCode1, String currecyCode2) {
-        URI url = URI.create(apiUrl + '/' + apiKey + '/' + currencyCode1 + '/' + currecyCode2 + '/' + amount);
+    public Conversion convertAmountFromTo (double amount, String currencyCode1, String currecyCode2) {
+        URI url = URI.create(apiUrl + "/" + apiKey + "/pair/" + currencyCode1 + "/" + currecyCode2 + "/" + amount);
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(url)
